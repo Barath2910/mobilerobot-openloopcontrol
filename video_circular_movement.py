@@ -2,7 +2,7 @@ from robomaster import robot
 import time
 from robomaster import camera
 
-if __name__ == '__main__':
+if __name__ == '_main_':
 
     ep_robot = robot.Robot()
     ep_robot.initialize(conn_type="ap")
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     print("Camera streaming started...")
     ep_camera.start_video_stream(display=True, resolution=camera.STREAM_360P)    
     
-    ep_chassis.drive_speed(x=0.2,y=0,z=20)
+    ep_chassis.drive_speed(x=0.2,y=0.2,z=20)
     time.sleep(20)
     ep_chassis.drive_speed(x=0,y=0,z=0)
     

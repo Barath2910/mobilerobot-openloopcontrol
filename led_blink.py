@@ -2,7 +2,7 @@ from robomaster import robot
 import time
 
 
-if __name__ == '__main__':
+if __name__ == '_main_':
     ep_robot = robot.Robot()
     ep_robot.initialize(conn_type="ap")
 
@@ -14,13 +14,15 @@ if __name__ == '__main__':
     b – int: [0~255], RGB blue component value
     effect – enum: (“on”, “off”, “flash”, “breath”, “scrolling”) lighting effect type, on: always on; off: always off; flash: blinking; breath: breathing; scrolling: horse racing Lamp (only valid for PTZ lamp)
     '''
-    for i in range(10):
-        ep_led.set_led(comp="all",r=255,g=0,b=0,effect="on")   
+    for i in range(3):
+        ep_led.set_led(comp="all",r=0,g=102,b=204,effect="on")   
         time.sleep(2)
-        ep_led.set_led(comp="all",r=0,g=255,b=0,effect="on")
+        ep_led.set_led(comp="all",r=204,g=0,b=102,effect="on")
         time.sleep(2)
-        ep_led.set_led(comp="all",r=0,g=0,b=255,effect="on")
-        time.sleep(2)        
+        ep_led.set_led(comp="all",r=255,g=0,b=0,effect="on")
+        time.sleep(2)   
+        ep_led.set_led(comp="all",r=51,g=255,b=51,effect="on")
+        time.sleep(2)     
     
     print("Completed...")
     ep_robot.close()

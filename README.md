@@ -9,25 +9,11 @@ To develop a python control code to move the mobilerobot along the predefined pa
 
 ## Procedure
 
-Step1:
-
-<br/>
-
-Step2:
-
-<br/>
-
-Step3:
-
-<br/>
-
-Step4:
-
-<br/>
-
-Step5:
-
-<br/>
+Step1: Initiate the MobileRobot.
+Step2: Connect your PC with the MobileRobot.
+Step3: Open Python program.
+Step4: Program the movements of the robot using python code.
+Step5: Execute the python program. 
 
 ## Program
 ```python
@@ -40,19 +26,26 @@ if __name__ == '__main__':
 
     ep_chassis = ep_robot.chassis
 
-    ## Write your code here
+    '''
+    x = x-axis movement distance,( meters) [-5,5]
+    y = y-axis movement distance,( meters) [-5,5]
+    z = rotation about z axis ( degree)[-180,180]
+    xy_speed = xy axis movement speed,( unit meter/second) [0.5,2]
+    '''
+    ep_chassis.move(x=0.5, y=0.5, z=35, xy_speed=0.75).wait_for_completed()
 
+    ep_chassis.move(x=0, y=0, z=0, xy_speed=1).wait_for_completed()
 
+    ep_chassis.move(x=-0.5, y=-0.5, z=145, xy_speed=0.75).wait_for_completed()
 
-    
     ep_robot.close()
 ```
 
 ## MobileRobot Movement Image:
 
-![robo](./img/robomaster.png)
+![robo](1.jpeg)
 
-Insert image here
+
 
 
 <br/>
@@ -62,9 +55,7 @@ Insert image here
 
 ## MobileRobot Movement Video:
 
-Upload your video in Youtube and paste your video-id here
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+https://youtu.be/HxjPvsw86WM
 
 <br/>
 <br/>
